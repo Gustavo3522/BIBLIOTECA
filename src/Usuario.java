@@ -12,6 +12,30 @@ public class Usuario {
         this.livrosEmprestados = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public List<Livros> getLivrosEmprestados() {
+        return livrosEmprestados;
+    }
+
+    public void setLivrosEmprestados(List<Livros> livrosEmprestados) {
+        this.livrosEmprestados = livrosEmprestados;
+    }
+
     public void removerLivros(Livros livros){
         livrosEmprestados.remove(livros);
     }
@@ -20,11 +44,4 @@ public class Usuario {
         livrosEmprestados.add(livros);
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public String getId(){
-        return id;
-    }
 }
