@@ -1,5 +1,4 @@
 package entities;
-import entities.Livros;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,31 +7,55 @@ import java.util.Scanner;
 public class Biblioteca {
     Scanner sc = new Scanner(System.in);
 
-    private List<Livros> livros = new ArrayList<>();
-    private List<Usuario> usuarios = new ArrayList<>();
+    List<Livros> livros = new ArrayList<>();
+    List<Usuario> usuarios = new ArrayList<>();
 
     public void cadastarLivro(){
-        Livros livros = new Livros();
+        Livros livro = new Livros();
         System.out.println("CADASTRO DE LIVRO");
 
         System.out.println("TITULO DO LIVRO: ");
         String titulo = sc.nextLine();
-        livros.setTitulo(titulo);
+        livro.setTitulo(titulo);
 
         System.out.println("AUTOR DO LIVRO: ");
         String autor = sc.nextLine();
-        livros.setAutor(autor);
+        livro.setAutor(autor);
 
         System.out.println("GENERO DO LIVRO: ");
         String genero = sc.nextLine();
-        livros.setGenero(genero);
+        livro.setGenero(genero);
 
         System.out.println("CÓDIGO DO LIVRO: ");
         String codigo = sc.nextLine();
-        livros.setCodigo(codigo);
+        livro.setCodigo(codigo);
 
-        System.out.println("LIVRO CADASTRADO COM SUCESSO !!!! ");
+        livros.add(livro);
 
+        System.out.println("LIVRO CADASTRADO COM SUCESSO !!! ");
+
+
+    }
+
+    public void cadastrarUsuario(){
+        Usuario usuario = new Usuario();
+        System.out.println("CADASTRO DE USUÁRIO");
+
+        System.out.println("NOME DO USUÁRIO: ");
+        String name = sc.nextLine();
+        usuario.setName(name);
+
+        System.out.println("ID DO USUÁRIO: ");
+        String id = sc.nextLine();
+
+        System.out.println("USUÁRIO CADASTRADO COM SUCESSO !!!");
+
+        usuarios.add(usuario);
+
+    }
+
+    public void verLivro(){
+        System.out.println(livros);
     }
 
 }

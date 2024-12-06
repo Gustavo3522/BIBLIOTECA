@@ -15,6 +15,7 @@ public class Livros {
         this.emprestado = false;
     }
 
+
     public void alterarStatus(boolean status) {
         this.emprestado = status;
     }
@@ -49,6 +50,10 @@ public class Livros {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String toString(){
+        return "Título: " + titulo + ", Autor: " + autor + ", Gênero: " + genero + ", Código: " + codigo;
     }
 
 }

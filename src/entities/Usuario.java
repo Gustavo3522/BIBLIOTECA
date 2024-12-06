@@ -8,7 +8,7 @@ public class Usuario {
     private  String id;
     private List<Livros> livrosEmprestados;
 
-    public Usuario(String name, String id){
+    public Usuario(){
         this.name = name;
         this.id = id;
         this.livrosEmprestados = new ArrayList<>();
@@ -28,5 +28,13 @@ public class Usuario {
 
     public String getId(){
         return id;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setId(String id){
+        this.id = id;
     }
 }
