@@ -59,8 +59,8 @@ public class Biblioteca {
             System.out.println("Nenhum livro cadastrado.");
         } else {
             for (Livros livro : livros) {
-                System.out.println(livro); // O método toString() da classe Livros será usado aqui
-                System.out.println(); // Adiciona uma linha em branco entre os livros
+                System.out.println(livro);
+                System.out.println();
             }
         }
     }
