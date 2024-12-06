@@ -55,7 +55,14 @@ public class Biblioteca {
     }
 
     public void verLivro(){
-        System.out.println(livros);
+        if (livros.isEmpty()) {
+            System.out.println("Nenhum livro cadastrado.");
+        } else {
+            for (Livros livro : livros) {
+                System.out.println(livro); // O método toString() da classe Livros será usado aqui
+                System.out.println(); // Adiciona uma linha em branco entre os livros
+            }
+        }
     }
 
 }
