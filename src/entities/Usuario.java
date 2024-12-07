@@ -37,4 +37,8 @@ public class Usuario {
     public void setId(String id){
         this.id = id;
     }
+
+    public String toString(){
+        return "name: " + name + ", id: " + id ;
+    }
 }

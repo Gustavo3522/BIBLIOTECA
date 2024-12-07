@@ -47,6 +47,7 @@ public class Biblioteca {
 
         System.out.println("ID DO USUÁRIO: ");
         String id = sc.nextLine();
+        usuario.setId(id);
 
         System.out.println("USUÁRIO CADASTRADO COM SUCESSO !!!");
 
@@ -57,9 +58,22 @@ public class Biblioteca {
     public void verLivro(){
         if (livros.isEmpty()) {
             System.out.println("Nenhum livro cadastrado.");
+            System.out.println();
         } else {
             for (Livros livro : livros) {
                 System.out.println(livro);
+                System.out.println();
+            }
+        }
+    }
+
+    public void verUsuarios(){
+        if (usuarios.isEmpty()) {
+            System.out.println("Nenhum Usuario cadastrado.");
+            System.out.println();
+        } else {
+            for (Usuario usuario : usuarios) {
+                System.out.println(usuario);
                 System.out.println();
             }
         }

@@ -42,6 +42,11 @@ public class Program {
 
                     break;
 
+                case 4:
+                    biblioteca.verUsuarios();
+
+                    break;
+
 
                 default:
                     System.out.println("Opção invalida");
