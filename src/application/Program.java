@@ -47,6 +47,11 @@ public class Program {
 
                     break;
 
+                case 5:
+                    biblioteca.pegarLivroEmprestado();
+
+                    break;
+
 
                 default:
                     System.out.println("Opção invalida");

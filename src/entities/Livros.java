@@ -5,20 +5,20 @@ public class Livros {
     private String autor;
     private String genero;
     private String codigo;
-    private boolean emprestado;
+    private String status;
 
     public Livros() {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.codigo = codigo;
-        this.emprestado = false;
+        this.status = "Livre para empréstimos";
     }
 
 
-    public void alterarStatus(boolean status) {
-        this.emprestado = status;
-    }
+    //public void alterarStatus(String status) {
+        //this.status = status;
+    //}
 
     public String getTitulo() {
         return titulo;
@@ -50,6 +50,14 @@ public class Livros {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.codigo = status;
     }
 
     public String toString(){

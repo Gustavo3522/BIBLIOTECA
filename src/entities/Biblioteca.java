@@ -79,4 +79,60 @@ public class Biblioteca {
         }
     }
 
+
+    public void pegarLivroEmprestado() {
+
+        System.out.println("Informe seu nome: ");
+        String nomeUsuario = sc.nextLine();
+
+        System.out.println("Informe seu ID: ");
+        String idUsuario = sc.nextLine();
+
+
+        Usuario usuarioEncontrado = null;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getName().equalsIgnoreCase(nomeUsuario) && usuario.getId().equals(idUsuario)) {
+                usuarioEncontrado = usuario;
+                break;
+            }
+        }
+
+        if (usuarioEncontrado == null) {
+            System.out.println("Usuário não encontrado. Verifique o nome e o ID.");
+            return;
+        }
+
+
+        System.out.println("Qual livro você deseja pegar emprestado?");
+        System.out.println("Digite o título do livro: ");
+        String titulo = sc.nextLine();
+
+        System.out.println("Digite o código do livro: ");
+        String codigo = sc.nextLine();
+
+
+        Livros livroEncontrado = null;
+        for (Livros livro : livros) {
+            if (livro.getTitulo().equalsIgnoreCase(titulo) && livro.getCodigo().equals(codigo)) {
+                livroEncontrado = livro;
+                break;
+            }
+        }
+
+        if (livroEncontrado == null) {
+            System.out.println("Livro não encontrado com o título e código fornecidos.");
+            return;
+        }
+
+
+        if (livroEncontrado.getStatus().equals("emprestado")) {
+            System.out.println("Este livro já está emprestado.");
+        } else {
+
+            livroEncontrado.setStatus("emprestado");
+            System.out.println("Livro " + livroEncontrado.getTitulo() + " emprestado com sucesso para " + usuarioEncontrado.getName() + "!");
+        }
+    }
+
+
 }
