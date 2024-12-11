@@ -52,6 +52,15 @@ public class Program {
 
                     break;
 
+                case 6:
+                    biblioteca.devolverLivro();
+
+                    break;
+
+                case 7:
+
+                    break;
+
 
                 default:
                     System.out.println("Opção invalida");

@@ -134,5 +134,62 @@ public class Biblioteca {
         }
     }
 
+    public void devolverLivro() {
+        // Solicita o nome e ID do usuário
+        System.out.println("Informe seu nome: ");
+        String nomeUsuario = sc.nextLine();
+
+        System.out.println("Informe seu ID: ");
+        String idUsuario = sc.nextLine();
+
+        // Verifica se o usuário existe
+        Usuario usuarioEncontrado = null;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getName().equalsIgnoreCase(nomeUsuario) && usuario.getId().equals(idUsuario)) {
+                usuarioEncontrado = usuario;
+                break;
+            }
+        }
+
+        if (usuarioEncontrado == null) {
+            System.out.println("Usuário não encontrado. Verifique o nome e o ID.");
+            return; // Encerra o método se o usuário não for encontrado
+        }
+
+        // Solicita o título e código do livro
+        System.out.println("Qual livro você deseja devolver?");
+        System.out.println("Digite o título do livro: ");
+        String titulo = sc.nextLine();
+
+        System.out.println("Digite o código do livro: ");
+        String codigo = sc.nextLine();
+
+        // Busca o livro pelo título e código
+        Livros livroEncontrado = null;
+        for (Livros livro : livros) {
+            if (livro.getTitulo().equalsIgnoreCase(titulo) && livro.getCodigo().equals(codigo)) {
+                livroEncontrado = livro;
+                break;
+            }
+        }
+
+        if (livroEncontrado == null) {
+            System.out.println("Livro não encontrado com o título e código fornecidos.");
+            return; // Encerra o método se o livro não for encontrado
+        }
+
+        // Verifica o status do livro
+        if (livroEncontrado.getStatus().equals("emprestado")) {
+            // Se o livro estiver emprestado, altera o status para "livre para empréstimo"
+            livroEncontrado.setStatus("livre para empréstimo");
+            System.out.println("Livro " + livroEncontrado.getTitulo() + " devolvido com sucesso. Agora está livre para empréstimo.");
+        } else {
+            // Se o livro não estava emprestado, exibe uma mensagem de erro
+            System.out.println("Este livro não está emprestado.");
+        }
+    }
+
+
+
 
 }
